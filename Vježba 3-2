@@ -1,0 +1,74 @@
+<?php
+
+$rezultat = "";
+
+if (isset($_POST["broj1"]) && isset($_POST["broj2"]) && isset($_POST["operacija"])) {
+
+    $broj1 = $_POST["broj1"];
+    $broj2 = $_POST["broj2"];
+    $operacija = $_POST["operacija"];
+
+    switch ($operacija) {
+
+        case "+":
+            $rezultat = $broj1 + $broj2;
+            break;
+
+        case "-":
+            $rezultat = $broj1 - $broj2;
+            break;
+
+        case "*":
+            $rezultat = $broj1 * $broj2;
+            break;
+
+        case "/":
+            if ($broj2 != 0) {
+                $rezultat = $broj1 / $broj2;
+            } else {
+                $rezultat = "Ne možeš dijeliti s nulom! To je CRINGE!";
+            }
+            break;
+
+        default:
+            $rezultat = "Greška!";
+    }
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <title>Vjezba 3-2</title>
+</head>
+<body>
+
+<h2>Kalkulator (Switch naredba)</h2>
+
+<form method="post">
+
+    <label>Upiši prvi broj:</label><br>
+    <input type="number" step="any" name="broj1" required><br><br>
+
+    <label>Upiši drugi broj:</label><br>
+    <input type="number" step="any" name="broj2" required><br><br>
+
+    <input type="submit" name="operacija" value="+">
+    <input type="submit" name="operacija" value="-">
+    <input type="submit" name="operacija" value="*">
+    <input type="submit" name="operacija" value="/">
+
+</form>
+
+<br>
+
+<?php
+if ($rezultat !== "") {
+    echo "<h3>Rezultat: $rezultat</h3>";
+}
+?>
+
+</body>
+</html>
