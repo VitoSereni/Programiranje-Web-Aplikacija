@@ -21,7 +21,7 @@ if (isset($_POST["broj"])) {
 <html lang="hr">
 <head>
     <meta charset="UTF-8">
-    <title>Pogodi broj</title>
+    <title>Vjezba 3-1</title>
 </head>
 <body>
 
