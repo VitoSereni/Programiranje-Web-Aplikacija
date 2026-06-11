@@ -1,0 +1,54 @@
+<?php
+
+$odgovor = "";
+$zamisljeniBroj = "";
+
+if (isset($_POST["broj"])) {
+
+    $korisnikBroj = $_POST["broj"];
+    $zamisljeniBroj = rand(1, 9);
+
+    if ($korisnikBroj == $zamisljeniBroj) {
+        $odgovor = "<p style='color:green;'>Pogodak, probaj ponovo!</p>";
+    }
+    else {
+        $odgovor = "<p style='color:red;'>Krivo, probaj ponovo!</p>";
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <title>Pogodi broj</title>
+</head>
+<body>
+
+<h2>Igra (pogodi broj)</h2>
+
+<form method="post">
+
+    <label>Upiši jedan broj od 1 do 9:</label>
+
+    <input type="number" name="broj" min="1" max="9" required>
+    <br>
+    <br>
+    <input type="submit" value="Provjeri">
+
+</form>
+
+<br>
+
+<?php
+
+echo $odgovor;
+
+if ($zamisljeniBroj != "") {
+    echo "Zamišljeni broj je " . $zamisljeniBroj;
+}
+
+?>
+
+</body>
+</html>
