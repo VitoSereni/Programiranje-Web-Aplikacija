@@ -1,0 +1,92 @@
+<?php
+
+$prosjek = "";
+$konacnaOcjena = "";
+
+if (isset($_POST["kol1"]) && isset($_POST["kol2"])) {
+
+    $kol1 = $_POST["kol1"];
+    $kol2 = $_POST["kol2"];
+
+    if ($kol1 < 1 || $kol1 > 5 || $kol2 < 1 || $kol2 > 5) {
+
+        $konacnaOcjena = "Ocjene moraju biti između 1 i 5.";
+
+    } else {
+
+        $prosjek = ($kol1 + $kol2) / 2;
+
+        if ($kol1 == 1 || $kol2 == 1) {
+            $konacnaOcjena = 1;
+        } else {
+            $konacnaOcjena = round($prosjek);
+        }
+
+    }
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<title>Ocjene kolokvija</title>
+
+<style>
+
+body {
+    font-family: Arial;
+}
+
+form {
+    width: 250px;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+.rezultat {
+    margin-top: 20px;
+    border: 1px solid black;
+    padding: 10px;
+    width: 250px;
+}
+
+</style>
+
+</head>
+<body>
+
+<h2>Unos ocjena</h2>
+
+<form method="post">
+
+    <label>1. kolokvij:</label><br>
+    <input type="number" name="kol1" min="1" max="5"><br>
+
+    <label>2. kolokvij:</label><br>
+    <input type="number" name="kol2" min="1" max="5"><br>
+
+    <input type="submit" value="Izračunaj">
+
+</form>
+
+<?php
+
+if ($konacnaOcjena != "") {
+
+    echo "<div class='rezultat'>";
+
+    echo "<p>Prosjek: " . $prosjek . "</p>";
+
+    echo "<p>Konačna ocjena: " . $konacnaOcjena . "</p>";
+
+    echo "</div>";
+}
+
+?>
+
+</body>
+</html>
