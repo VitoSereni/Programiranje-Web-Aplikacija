@@ -1,0 +1,45 @@
+<?php
+
+$cars = array("Audi", "BMW", "Renault", "Citroen");
+
+?>
+
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<title>Zadatak 4-1</title>
+</head>
+<body>
+
+<h3>Označi vozilo:</h3>
+
+<form method="post">
+
+<?php
+
+foreach($cars as $car)
+{
+    echo "<input type='radio' name='vozilo' value='$car'> $car <br>";
+}
+
+?>
+
+<br>
+
+<input type="submit" value="Pošalji">
+
+</form>
+
+<?php
+
+if(isset($_POST["vozilo"]))
+{
+    echo "<h3>Odabrano vozilo:</h3>";
+    echo $_POST["vozilo"];
+}
+
+?>
+
+</body>
+</html>
