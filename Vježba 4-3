@@ -1,0 +1,44 @@
+<?php
+
+$brojRijeci = "";
+
+if(isset($_POST["recenica"]))
+{
+    $recenica = $_POST["recenica"];
+    $brojRijeci = str_word_count($recenica);
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<title>Zadatak 4-3</title>
+</head>
+<body>
+
+<h2>Zadatak 4-3 str_word_count</h2>
+
+<form method="post">
+
+    <label>Ulazni niz:</label><br>
+    <input type="text" name="recenica" size="50"><br><br>
+
+    <input type="submit" value="Ispiši broj riječi">
+
+</form>
+
+<?php
+
+if($brojRijeci != "")
+{
+    echo "<p>";
+    echo "Ulazni niz sadrži " . $brojRijeci . " riječi.";
+    echo "</p>";
+}
+
+?>
+
+</body>
+</html>
