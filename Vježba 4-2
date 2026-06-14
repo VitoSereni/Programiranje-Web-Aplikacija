@@ -1,0 +1,33 @@
+<?php
+
+$dan = date("N");
+$sat = date("G");
+
+if ($dan == 7)
+{
+    echo "Dućan je zatvoren.";
+}
+else if ($dan == 6)
+{
+    if ($sat >= 9 && $sat < 14)
+    {
+        echo "Dućan je otvoren.";
+    }
+    else
+    {
+        echo "Dućan je zatvoren.";
+    }
+}
+else
+{
+    if ($sat >= 8 && $sat < 20)
+    {
+        echo "Dućan je otvoren.";
+    }
+    else
+    {
+        echo "Dućan je zatvoren.";
+    }
+}
+
+?>
