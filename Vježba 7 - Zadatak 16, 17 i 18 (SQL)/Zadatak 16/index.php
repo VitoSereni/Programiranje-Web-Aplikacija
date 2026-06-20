@@ -2,7 +2,7 @@
 <html lang="hr">
 <head>
     <meta charset="UTF-8">
-    <title>Registration Form</title>
+    <title>Vjezba 16</title>
 
     <style>
         body {
