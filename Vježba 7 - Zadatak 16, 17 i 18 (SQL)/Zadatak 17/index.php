@@ -20,7 +20,7 @@ $result = $conn->query($sql);
 <html lang="hr">
 <head>
     <meta charset="UTF-8">
-    <title>Users and Countries</title>
+    <title>Vjezba 17</title>
 
     <style>
         body {
